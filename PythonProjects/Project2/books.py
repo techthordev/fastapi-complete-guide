@@ -19,7 +19,7 @@ class Book:
         self.title = title
         self.author = author
         self.description = description
-        self.published_date: int = published_date
+        self.published_date = published_date
         self.rating = rating
         
         
@@ -101,7 +101,7 @@ async def update_book(book: BookRequest):
     book_changed = False
     for i in range(len(BOOKS)):
         if BOOKS[i].id == book.id:
-            BOOKS[i] = book
+            BOOKS[i] = Book(**book.model_dump())
             book_changed = True
         if not book_changed:
             raise HTTPException(status_code=404, detail="Item not found")
