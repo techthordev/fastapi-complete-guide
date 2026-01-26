@@ -8,4 +8,5 @@ dependencies = [
     "bcrypt==4.0.1",
     "fastapi[cli,standard]>=0.128.0",
     "pydantic>=2.12.5",
+    "spglib>=2.7.0",
 ]
